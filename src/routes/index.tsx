@@ -1,7 +1,8 @@
-import {createBrowserRouter, Navigate} from 'react-router-dom'
-import App from './books'
-import Book from './book'
+import {Navigate, createBrowserRouter} from 'react-router-dom'
+import Home from './home'
+import Books from './books'
 import ErrorBoundary from '../components/ErrorBoundary'
+import {getBookList, getBooksByList} from '../api'
 
 export const router = createBrowserRouter([
   {
@@ -9,13 +10,15 @@ export const router = createBrowserRouter([
     element: <Navigate to='/books' />,
   },
   {
-    path: 'books',
-    element: <App />,
+    path: '/books',
+    element: <Home />,
+    loader: async ({request}) => getBookList(request),
     errorElement: <ErrorBoundary />,
   },
   {
-    path: 'books/:id',
-    element: <Book />,
+    path: 'books/:list',
+    element: <Books />,
+    loader: async ({request, params}) => getBooksByList(request, params),
     errorElement: <ErrorBoundary />,
   },
 ])

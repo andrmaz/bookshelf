@@ -1,8 +1,8 @@
 import {useLoaderData} from 'react-router-dom'
-import {Book} from '../types/book-list'
+import {Result} from '../types/best-sellers'
 
-export default function Books() {
-  const books = useLoaderData() as Book[]
+export default function Home() {
+  const books = useLoaderData() as Result[]
 
   return (
     <ul>
