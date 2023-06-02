@@ -27,6 +27,7 @@ const Container = styled.div`
   width: 100%;
 `
 const Content = styled.main`
+  background-color: ${p => p.theme.colors.tertiary};
   height: 100%;
   width: 100%;
 `

@@ -10,7 +10,9 @@ export const BestSeller = ({book}: Props) => {
     <Wrapper>
       <Header>
         <Title>{book.title}</Title>
-        <Author>{book.author}</Author>
+        <Author>
+          <i>By</i> {book.author}
+        </Author>
       </Header>
       <Description>{book.description}</Description>
     </Wrapper>
@@ -18,6 +20,7 @@ export const BestSeller = ({book}: Props) => {
 }
 
 const Wrapper = styled.article`
+  background-color: ${p => p.theme.colors.background};
   border: 1px solid ${p => p.theme.colors.primary};
   border-radius: ${p => p.theme.spacing['x-small']};
   height: 200px;
@@ -26,11 +29,17 @@ const Wrapper = styled.article`
 `
 const Header = styled.header`
   height: minmax(35%, 40%);
+  margin-bottom: ${p => p.theme.spacing.small};
 `
 const Title = styled.h3`
   font-size: large;
+  font-weight: ${p => p.theme.weight.bold};
 `
 const Author = styled.h5`
   font-size: medium;
+  font-weight: ${p => p.theme.weight.medium};
 `
-const Description = styled.p``
+const Description = styled.p`
+  font-size: small;
+  font-weight: ${p => p.theme.weight.normal};
+`

@@ -13,6 +13,7 @@ export const Header = ({title}: HeaderProps) => {
 }
 
 const Wrapper = styled.header`
+  background-color: ${p => p.theme.colors.primary};
   border-bottom: 1px solid black;
   display: flex;
   height: 100px;
@@ -21,6 +22,7 @@ const Wrapper = styled.header`
   width: 100%;
 `
 const Title = styled.h1`
+  color: ${p => p.theme.colors.background};
   font-size: xx-large;
   margin: auto;
   text-transform: capitalize;
