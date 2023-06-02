@@ -8,6 +8,13 @@ declare module 'styled-components' {
       primary: string
       secondary: string
     }
+    spacing: {
+      'x-small': string
+      small: string
+      medium: string
+      large: string
+      'x-large': string
+    }
     breakpoints: {
       small: string
       medium: string
