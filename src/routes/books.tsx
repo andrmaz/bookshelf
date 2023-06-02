@@ -1,9 +1,10 @@
-import {useLoaderData, useParams} from 'react-router-dom'
+import {useLoaderData, useNavigation, useParams} from 'react-router-dom'
 import {Book} from '../types/book-list'
 import Layout from '../components/Layout'
 import styled from 'styled-components'
 import {Card} from '../components/Card'
 import {decodeListName} from '../utils/book'
+import {Loading} from '../components/Loading'
 
 type Params = {
   list: string
@@ -12,14 +13,20 @@ type Params = {
 export default function Books() {
   const {list} = useParams<Params>()
   const books = useLoaderData() as Book[]
+  const navigation = useNavigation()
+  const loading = navigation.state === 'loading'
 
   return (
     <Layout title={decodeListName(list)}>
-      <Wrapper>
-        {books.map(book => (
-          <Card key={book.title} book={book} />
-        ))}
-      </Wrapper>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Wrapper>
+          {books.map(book => (
+            <Card key={book.title} book={book} />
+          ))}
+        </Wrapper>
+      )}
     </Layout>
   )
 }

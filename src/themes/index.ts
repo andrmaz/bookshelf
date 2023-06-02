@@ -29,11 +29,11 @@ export const theme: DefaultTheme = {
     foreground: colors.text,
     primary: colors.indigo,
     secondary: colors.orange,
-  },
-  breakpoints: {
-    small: `@media (max-width: ${devices.mobile}px)`,
-    medium: `@media (max-width: ${devices.tablet}px)`,
-    large: `@media (max-width: ${devices.laptop}px)`,
+    tertiary: colors.yellow,
+    action: colors.indigoLighten80,
+    disabled: colors.gray20,
+    active: colors.indigoDarken10,
+    backdrop: colors.gray80,
   },
   spacing: {
     'x-small': '4px',
@@ -41,6 +41,16 @@ export const theme: DefaultTheme = {
     medium: '16px',
     large: `32px`,
     'x-large': '48px',
+  },
+  weight: {
+    normal: 500,
+    medium: 600,
+    bold: 800,
+  },
+  breakpoints: {
+    small: `@media (max-width: ${devices.mobile}px)`,
+    medium: `@media (max-width: ${devices.tablet}px)`,
+    large: `@media (max-width: ${devices.laptop}px)`,
   },
   motion: {
     enabled: '@media (prefers-reduced-motion: no-preference)',

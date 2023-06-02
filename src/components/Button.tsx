@@ -5,16 +5,23 @@ export const Button = (props: React.ComponentPropsWithoutRef<'button'>) => {
 }
 
 const Base = styled.button`
-  padding: ${p => p.theme.spacing.small};
+  background-color: ${p => p.theme.colors.action};
+  box-shadow: 4px 4px ${p => p.theme.colors.backdrop};
   border-radius: ${p => p.theme.spacing['x-small']};
+  color: ${p => p.theme.colors.foreground};
+  cursor: pointer;
   font-size: small;
-  background-color: ${p => p.theme.colors.primary};
-  color: ${p => p.theme.colors.background};
+  padding: ${p => p.theme.spacing.small};
   cursor: pointer;
   &:hover {
-    transform: scale(1.2);
+    background-color: ${p => p.theme.colors.active};
+    color: ${p => p.theme.colors.background};
+  }
+  &:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
   &:disabled {
-    /* TODO */
+    background-color: ${p => p.theme.colors.disabled};
   }
 `
