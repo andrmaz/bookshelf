@@ -35,6 +35,13 @@ export const theme: DefaultTheme = {
     medium: `@media (max-width: ${devices.tablet}px)`,
     large: `@media (max-width: ${devices.laptop}px)`,
   },
+  spacing: {
+    'x-small': '4px',
+    small: `8px`,
+    medium: '16px',
+    large: `32px`,
+    'x-large': '48px',
+  },
   motion: {
     enabled: '@media (prefers-reduced-motion: no-preference)',
   },
